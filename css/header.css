@@ -1,0 +1,136 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: var(--primary-bg);
+
+  height: 4.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+#header .content {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+#header nav a {
+  position: relative;
+  display: inline-block;
+  color: var(--title-color);
+  letter-spacing: 0.42px;
+  padding: 1.625rem 0;
+}
+
+#header nav a:hover {
+  color: var(--primary-color);
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+#header nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.125rem;
+  left: 0;
+  bottom: 0;
+  background: var(--primary-color);
+  transition: width 0.1s;
+}
+
+#header nav a:hover::after {
+  width: 100%;
+}
+
+#header nav a.active {
+  font-weight: bold;
+  letter-spacing: 0px;
+  color: var(--primary-color);
+}
+
+#header nav a.active::after {
+  width: 100%;
+}
+
+#header button[data-menu="open"],
+#header button[data-menu="close"] {
+  display: none;
+  border: 0;
+  background: none;
+
+  font-size: 1.5rem;
+  line-height: 0;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  #header nav {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    top: -1px;
+    left: -1px;
+    opacity: 0;
+    top: -50%;
+    visibility: hidden;
+    transition: top 0.2s, opacity 0.2s;
+  }
+
+  #header button[data-menu="open"] {
+    display: block;
+  }
+
+  #header.active nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    opacity: 1;
+    visibility: visible;
+    background: var(--secondary-bg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  #header.active nav ul {
+    flex-direction: column;
+  }
+
+  #header.active nav a {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.875rem;
+    font-weight: bold;
+  }
+
+  #header.active button[data-menu="open"] {
+    display: none;
+  }
+
+  #header.active button[data-menu="close"] {
+    display: block;
+
+    position: relative;
+    z-index: 999;
+  }
+}

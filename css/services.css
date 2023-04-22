@@ -1,0 +1,52 @@
+#services .content {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 4rem;
+}
+
+#services header {
+  max-width: 33rem;
+  text-align: center;
+}
+
+#services header p {
+  margin-top: 0.75rem;
+
+  font-size: 1.125rem;
+  color: var(--title-color);
+}
+
+#services header p span {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+#services .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+#services .cards_item {
+  flex: 350px;
+  text-align: center;
+  padding: 3.625rem 3rem;
+  border-bottom: 4px solid var(--primary-color);
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+}
+
+#services .cards_item i {
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+#services .cards_item h3 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+#services .cards_item p {
+  margin-top: 0.75rem;
+}
